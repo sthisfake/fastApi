@@ -1,1 +1,3 @@
-favourit_movie_from_imdb_250\venv
+favourit_movie_from_imdb_250/venv
+favourit_movie_from_imdb_250/project/alembic.ini
+favourit_movie_from_imdb_250/project/db/db_setup.py
