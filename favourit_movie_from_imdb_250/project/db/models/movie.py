@@ -3,6 +3,7 @@ from sqlalchemy.orm import relationship
 
 from .mixins import Timestamp
 from ..db_setup import Base
+from sqlalchemy.orm import Mapped
 
 class Movie(Timestamp , Base):
     __tablename__ = "movie"
@@ -16,7 +17,7 @@ class Movie(Timestamp , Base):
     director = Column(Text,  index=True , nullable=False)
     actors =  Column(Text,  index=True , nullable=False)
 
-    fav_by_users = relationship("favourit_movies", back_populates="the_movie", uselist=True)
+    fav_by_users : Mapped[list["FavouritMovie"]] =  relationship()
 
 
 
@@ -27,5 +28,5 @@ class FavouritMovie(Base):
     user_id = Column(Integer , ForeignKey("users.id") , nullable=False )
     movie_id = Column(Integer , ForeignKey("movie.id")  , nullable=False )
 
-    like_by = relationship("users", back_populates="like_by", uselist=False)
-    the_movie = relationship("movie", back_populates="fav_by_users", uselist=False)
+    like_by : Mapped["User"] = relationship(back_populates="fav_movies")
+    the_movie : Mapped["Movie"] = relationship(back_populates="fav_by_users")

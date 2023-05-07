@@ -3,6 +3,8 @@ from sqlalchemy.orm import relationship
 
 from .mixins import Timestamp
 from ..db_setup import Base
+from .movie import FavouritMovie
+from sqlalchemy.orm import Mapped
 
 class User(Timestamp, Base):
     __tablename__ = "users"
@@ -13,4 +15,4 @@ class User(Timestamp, Base):
     userName = Column(String(100), unique=True, index=True, nullable=False)
     password =  Column(Text, unique=True, index=True, nullable=False)
 
-    fav_movies = relationship("favourit_movies", back_populates="like_by", uselist=True)
+    fav_movies: Mapped[list["FavouritMovie"]] =  relationship()

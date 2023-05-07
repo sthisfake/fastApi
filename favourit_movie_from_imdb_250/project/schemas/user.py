@@ -10,7 +10,7 @@ class UserBaseLogin(BaseModel):
 class UserBaseSignUp(BaseModel):
     full_name: str
     email: str    
-    user_name : str
+    userName : str
     password : str
 
 
