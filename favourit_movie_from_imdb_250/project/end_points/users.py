@@ -4,7 +4,8 @@ from typing import List
 from schemas.user import User , UserSignUp
 from sqlalchemy.orm import Session
 from db.db_setup import   get_db
-from end_points.controllers.users import get_users , create_user
+from end_points.controllers.users import get_users , create_user ,new_sign_up
+from schemas.jwt import JWT
 
 
 
@@ -19,6 +20,10 @@ async def get_all_users( db: Session = Depends(get_db)):
 async def create_new_user(user: UserSignUp , db: Session = Depends(get_db)):
     return create_user(db=db, user=user)     
 
+
+@router.post("/signup" ,response_model = JWT , status_code = 201)
+async def sign_up(user: UserSignUp , db: Session = Depends(get_db)):
+    return new_sign_up(db=db, user=user)
 
 
     

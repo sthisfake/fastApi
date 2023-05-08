@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from end_points import users
 from end_points import movies
 
+from dotenv import load_dotenv
+
 app = FastAPI(
     title="Fast API Backend",
     description="backend for small movie app.",
