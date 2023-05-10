@@ -17,3 +17,4 @@ async def get_all_movies(db: Session = Depends(get_db)):
 async def get_movie_by_id(id : int , db : Session = Depends(get_db)):
     movie = get_movie_id(db , id)
     return movie
+

@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 class UserBaseLogin(BaseModel):
     email_or_username: str
-    password: int
+    password: str
 
 class UserBaseSignUp(BaseModel):
     full_name: str
