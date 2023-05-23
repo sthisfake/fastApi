@@ -1,0 +1,122 @@
+[
+  {
+    "name": "دوره گرامر",
+    "language": "انگلیسی",
+    "course_lenght": "سه ماه",
+    "course_capacity": 50,
+    "is_special": false,
+    "level": "مقدماتی",
+    "level_number": 1,
+    "start_date": "خرداد 1402"
+  },
+  {
+    "name": "دوره آیلتس و تافل",
+    "language": "انگلیسی",
+    "course_lenght": "شش ماه",
+    "course_capacity": 60,
+    "is_special": true,
+    "level": "فشرده",
+    "level_number": 7,
+    "start_date": "تیر 1402"
+  },
+  {
+    "name": "دوره اسپیکینگ",
+    "language": "انگلیسی",
+    "course_lenght": "سه ماه",
+    "course_capacity": 30,
+    "is_special": false,
+    "level": "میان رده",
+    "level_number": 4,
+    "start_date": "مرداد 1402"
+  },
+  {
+    "name": "دوره معمولی ",
+    "language": "انگلیسی",
+    "course_lenght": "چهار ماه",
+    "course_capacity": 45,
+    "is_special": false,
+    "level": "پیشرفته",
+    "level_number": 7,
+    "start_date": "مرداد 1402"
+  },
+  {
+    "name": "دوره گرامر",
+    "language": "آلمانی",
+    "course_lenght": "سه ماه",
+    "course_capacity": 50,
+    "is_special": false,
+    "level": "مقدماتی",
+    "level_number": 1,
+    "start_date": "خرداد 1402"
+  },
+  {
+    "name": "دوره آیلتس و تافل",
+    "language": "آلمانی",
+    "course_lenght": "شش ماه",
+    "course_capacity": 60,
+    "is_special": true,
+    "level": "فشرده",
+    "level_number": 7,
+    "start_date": "تیر 1402"
+  },
+  {
+    "name": "دوره اسپیکینگ",
+    "language": "آلمانی",
+    "course_lenght": "سه ماه",
+    "course_capacity": 30,
+    "is_special": false,
+    "level": "میان رده",
+    "level_number": 4,
+    "start_date": "مرداد 1402"
+  },
+  {
+    "name": "دوره معمولی ",
+    "language": "آلمانی",
+    "course_lenght": "چهار ماه",
+    "course_capacity": 45,
+    "is_special": false,
+    "level": "پیشرفته",
+    "level_number": 7,
+    "start_date": "مرداد 1402"
+  },
+  {
+    "name": "دوره گرامر",
+    "language": "ایتالیایی",
+    "course_lenght": "سه ماه",
+    "course_capacity": 50,
+    "is_special": false,
+    "level": "مقدماتی",
+    "level_number": 1,
+    "start_date": "خرداد 1402"
+  },
+  {
+    "name": "دوره آیلتس و تافل",
+    "language": "ایتالیایی",
+    "course_lenght": "شش ماه",
+    "course_capacity": 60,
+    "is_special": true,
+    "level": "فشرده",
+    "level_number": 7,
+    "start_date": "تیر 1402"
+  },
+  {
+    "name": "دوره اسپیکینگ",
+    "language": "ایتالیایی",
+    "course_lenght": "سه ماه",
+    "course_capacity": 30,
+    "is_special": false,
+    "level": "میان رده",
+    "level_number": 4,
+    "start_date": "مرداد 1402"
+  },
+  {
+    "name": "دوره معمولی ",
+    "language": "ایتالیایی",
+    "course_lenght": "چهار ماه",
+    "course_capacity": 45,
+    "is_special": false,
+    "level": "پیشرفته",
+    "level_number": 7,
+    "start_date": "مرداد 1402"
+  }
+]
