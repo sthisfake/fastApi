@@ -3,7 +3,7 @@ from ..db_setup import Base
 from sqlalchemy.orm import relationship
 
 
-from db.models.user_course import UserCourse
+
 
 
 class User(Base):

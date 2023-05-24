@@ -3,7 +3,7 @@ from fastapi import Depends , HTTPException
 from sqlalchemy.orm import Session
 from db.db_setup import get_db
 from schemas.user import UserSignUp , UserReturn , UserLogin
-from schemas.course import Course as courses
+from schemas.course import Course as doros
 from db.models.user import User
 from db.models.course import Course
 from typing import List
@@ -75,9 +75,3 @@ async def login(user: UserLogin , db: Session = Depends(get_db)):
         raise HTTPException(status_code = 404, detail=  "user doesnt exist")
     
 
-@router.get("/courses", response_model= list[courses] ,  status_code=200) 
-async def courses( db: Session = Depends(get_db)):
-
-    #get all the courses 
-    courses = db.query(Course).offset(0).all()
-    return courses

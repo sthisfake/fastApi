@@ -1,4 +1,4 @@
-from sqlalchemy import Column,Integer, String , Boolean
+from sqlalchemy import Column,Integer, String , Boolean , Float
 from ..db_setup import Base
 from sqlalchemy.orm import relationship
 
@@ -17,5 +17,6 @@ class Course(Base):
     level = Column(String(45)) 
     level_number = Column(Integer) 
     start_date = Column(String(45))
+    price = Column(Float ,nullable=False )
 
-    courses_course  = relationship('Course' , back_populates='course_courses')
+    users  = relationship('UserCourse' , back_populates='courses')

@@ -14,3 +14,8 @@ class Course(BaseModel):
 
     class config:
         orm_mode = True   
+
+class CourseUserInsert(BaseModel):
+    user_id : int
+    course_id : int   
+    phone_number:str     
