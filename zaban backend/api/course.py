@@ -25,7 +25,7 @@ async def courses( db: Session = Depends(get_db)):
         item = doros(id= course.id  , name = course.name , language=course.language ,
                      course_lenght= course.language , course_capacity= course.course_capacity , 
                      is_special=course.is_special , level=course.level , level_number=course.level_number,
-                     start_date=course.start_date)
+                     start_date=course.start_date , price=course.price)
         
         CourseReturn.append(item)
 
@@ -62,14 +62,25 @@ async def insert_user_course( courseInsert :CourseUserInsert , db:Session = Depe
 
         if user != None:
 
-            user_course = UserCourse(phone_number_related = courseInsert.phone_number , user_id =courseInsert.user_id , 
-                                    course_id = courseInsert.course_id )
-            
-            db.add(user_course)
-            db.commit()
-            db.refresh(user_course)
+            is_already_insert = db.query(UserCourse).filter(UserCourse.user_id == courseInsert.user_id and UserCourse.course_id == courseInsert.course_id )
 
-            return {"massage" : "succecfully inserted"}
+            if is_already_insert == None :
+
+                user_course = UserCourse(phone_number_related = courseInsert.phone_number , user_id =courseInsert.user_id , 
+                                        course_id = courseInsert.course_id )
+                
+                db.add(user_course)
+                db.commit()
+                db.refresh(user_course)
+
+                db.query(Course).filter(Course.id == courseInsert.course_id ).update({'course_capacity' : Course.course_capacity -1 })
+                db.commit()
+
+                return {"massage" : "succecfully inserted"}
+            
+            else :
+                raise HTTPException(status_code = 403, detail=  "user already enrolled in course")
+
         
         else :
             raise HTTPException(status_code = 404, detail=  "user doesnt exist")  

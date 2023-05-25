@@ -10,6 +10,7 @@ class Course(BaseModel):
     level : str
     level_number : int
     start_date : str
+    price : float
 
 
     class config:
