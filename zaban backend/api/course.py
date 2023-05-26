@@ -8,6 +8,7 @@ from db.models.user import User
 from typing import List
 from db.models.user_course import UserCourse
 from schemas.course import CourseUserInsert
+from sqlalchemy import and_
 
 
 router = fastapi.APIRouter()
@@ -23,7 +24,7 @@ async def courses( db: Session = Depends(get_db)):
     #map to the pydantic model
     for course in courses :
         item = doros(id= course.id  , name = course.name , language=course.language ,
-                     course_lenght= course.language , course_capacity= course.course_capacity , 
+                     course_lenght= course.course_lenght , course_capacity= course.course_capacity , 
                      is_special=course.is_special , level=course.level , level_number=course.level_number,
                      start_date=course.start_date , price=course.price)
         
@@ -62,7 +63,7 @@ async def insert_user_course( courseInsert :CourseUserInsert , db:Session = Depe
 
         if user != None:
 
-            is_already_insert = db.query(UserCourse).filter(UserCourse.user_id == courseInsert.user_id and UserCourse.course_id == courseInsert.course_id )
+            is_already_insert = db.query(UserCourse).filter(and_(UserCourse.user_id == courseInsert.user_id, UserCourse.course_id == courseInsert.course_id)).first()
 
             if is_already_insert == None :
 
